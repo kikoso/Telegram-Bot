@@ -19,9 +19,13 @@ app.post('/new-message', function(req, res) {
   var x = message.text
   var y = replaceAll(x,'a','i')
   y = replaceAll(y,'e','i')
-  y = replaceAll(y,'i','i')
   y = replaceAll(y,'o','i')
   y = replaceAll(y,'u','i')
+  y = replaceAll(y,'A','I')
+  y = replaceAll(y,'E','I')
+  y = replaceAll(y,'O','I')
+  y = replaceAll(y,'U','I')
+	
   axios.get('https://api.telegram.org/TOKEN/sendMessage?chat_id='+message.chat.id+'&text='+y)
     .then(response => {
 	  console.log('Message posted')
