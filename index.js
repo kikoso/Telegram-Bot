@@ -24,7 +24,8 @@ app.post('/new-message', function(req, res) {
   y = replaceAll(y,'u','i')
   axios.get('https://api.telegram.org/TOKEN/sendMessage?chat_id='+message.chat.id+'&text='+y)
     .then(response => {
-      console.log('Message posted')
+	  console.log('Message posted')
+	  console.log(message.text)
       res.end('ok')
     })
     .catch(err => {
